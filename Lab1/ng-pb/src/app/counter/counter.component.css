@@ -1,0 +1,13 @@
+h1 {
+  font-size: 60px;
+}
+
+button {
+  font-size: 50px;
+  width: 100px;
+  margin: 10px;
+}
+
+.nice {
+  color: green;
+}

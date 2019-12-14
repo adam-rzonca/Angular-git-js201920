@@ -1,0 +1,8 @@
+<app-news-editor (onNewsAdd)="addNews($event)"></app-news-editor>
+<hr />
+<app-news-item
+  [title]="item"
+  *ngFor="let item of news; let i = index"
+  (onRemove)="removeNews(i)"
+>
+</app-news-item>
