@@ -22,7 +22,8 @@ export class NewsEditorComponent implements OnInit {
   }
 
   addNews() {
-    this.newsService.addNews(this.title, this.imageUrl, this.content);
+    const id: number = Date.now();
+    this.newsService.addNews(id, this.title, this.imageUrl, this.content, 0);
     this.title = "";
     this.imageUrl = "";
     this.content = "";

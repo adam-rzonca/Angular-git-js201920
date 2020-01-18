@@ -12,7 +12,6 @@ export class NewsRefreshComponent implements OnInit {
   ngOnInit() {}
 
   refresh() {
-    console.log("Refresh Button Click");
     this.newsService.refresh();
   }
 }

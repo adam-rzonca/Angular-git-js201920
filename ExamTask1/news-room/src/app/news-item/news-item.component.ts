@@ -17,10 +17,10 @@ export class NewsItemComponent {
   constructor(private newsService: NewsService) {}
 
   remove() {
-    this.newsService.removeNews(this.index);
+    this.newsService.removeNews(this.news.id);
   }
 
   vote() {
-    this.newsService.vote(this.index);
+    this.newsService.vote(this.news.id);
   }
 }
