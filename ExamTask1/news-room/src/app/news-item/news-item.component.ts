@@ -19,4 +19,8 @@ export class NewsItemComponent {
   remove() {
     this.newsService.removeNews(this.index);
   }
+
+  vote() {
+    this.newsService.vote(this.index);
+  }
 }

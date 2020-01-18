@@ -1,6 +1,18 @@
 <label>
-  Podaj tytuł:
+  Title:
   <input type="text" [(ngModel)]="title" />
 </label>
+<br />
+<label>
+  Image URL:
+  <input type="text" [(ngModel)]="imageUrl" />
+</label>
+<br />
+<label>
+  Content:
+</label>
+<br />
+<textarea [(ngModel)]="content"></textarea>
 
-<button (click)="addNews()">Dodaj</button>
+<br />
+<button (click)="addNews()">Add news</button>

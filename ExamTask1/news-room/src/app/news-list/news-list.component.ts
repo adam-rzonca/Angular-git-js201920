@@ -20,10 +20,14 @@ export class NewsListComponent implements OnInit {
     this.loadNews();
   }
 
+  // public loadNews() {
+  //   this.news = [];
+  //   setTimeout(() => {
+  //     this.news = this.newsService.getNewsList();
+  //   }, 2000);
+  // }
+
   public loadNews() {
-    this.news = [];
-    setTimeout(() => {
-      this.news = this.newsService.getNewsList();
-    }, 2000);
+    this.news = this.newsService.getNewsList();
   }
 }

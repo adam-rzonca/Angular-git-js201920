@@ -1,4 +1,10 @@
-<div class="news-item" *ngIf="news">
-  <p>{{ news.title }}</p>
-  <button (click)="remove()">Usuń</button>
+<div [ngClass]="{ red: index % 2 === 0, blue: index % 2 !== 0 }" *ngIf="news">
+  <h2>{{ news.title }}</h2>
+  <h3>Votes: {{ news.votes }}</h3>
+  <img src="{{ news.imageUrl }}" width="60" height="90" />
+  <br />
+  {{ news.content }}
+  <br />
+  <button (click)="remove()">Delete</button>
+  <button (click)="vote()">+</button>
 </div>

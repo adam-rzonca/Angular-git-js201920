@@ -8,15 +8,24 @@ import { NewsService } from "../news.service";
 })
 export class NewsEditorComponent implements OnInit {
   title: string;
+  imageUrl: string;
+  content: string;
+  votes: number;
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
     this.title = "";
+    this.imageUrl = "";
+    this.content = "";
+    this.votes = 0;
   }
 
   addNews() {
-    this.newsService.addNews(this.title);
+    this.newsService.addNews(this.title, this.imageUrl, this.content);
     this.title = "";
+    this.imageUrl = "";
+    this.content = "";
+    this.votes = 0;
   }
 }

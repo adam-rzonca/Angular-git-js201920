@@ -4,6 +4,6 @@
 <app-news-item
   [news]="item"
   [index]="i"
-  *ngFor="let item of news; let i = index"
+  *ngFor="let item of news | sortByVotes; let i = index"
 >
 </app-news-item>

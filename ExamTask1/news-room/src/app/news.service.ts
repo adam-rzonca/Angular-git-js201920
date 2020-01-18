@@ -1,5 +1,7 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { NewsData } from "./news-data";
+import newsInitList from "./news.json";
+import { ThrowStmt } from "@angular/compiler";
 
 @Injectable({
   providedIn: "root"
@@ -7,11 +9,9 @@ import { NewsData } from "./news-data";
 export class NewsService {
   onChange = new EventEmitter();
 
-  private news: NewsData[] = [
-    new NewsData("Title1"),
-    new NewsData("Title2"),
-    new NewsData("Title3")
-  ];
+  private news: NewsData[] = newsInitList.map(
+    news => new NewsData(news.title, news.imageUrl, news.content, news.votes)
+  );
 
   constructor() {}
 
@@ -19,8 +19,13 @@ export class NewsService {
     return this.news.slice();
   }
 
-  public addNews(title: string) {
-    this.news.push(new NewsData(title));
+  public addNews(
+    title: string,
+    imageUrl: string,
+    content: string,
+    votes: number
+  ) {
+    this.news.push(new NewsData(title, imageUrl, content, votes));
     this.onChange.emit();
   }
 
@@ -32,5 +37,12 @@ export class NewsService {
   public refresh() {
     this.onChange.emit();
     console.log("Service Refresh");
+  }
+
+  public vote(index: number) {
+    console.log(index);
+    console.log(this.news);
+    this.news[index].votes++;
+    this.onChange.emit();
   }
 }

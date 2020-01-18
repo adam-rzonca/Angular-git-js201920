@@ -8,7 +8,8 @@ import { NewsItemComponent } from "./news-item/news-item.component";
 import { NewsEditorComponent } from "./news-editor/news-editor.component";
 
 import { FormsModule } from "@angular/forms";
-import { NewsRefreshComponent } from './news-refresh/news-refresh.component';
+import { NewsRefreshComponent } from "./news-refresh/news-refresh.component";
+import { SortByVotesPipe } from "./SortByVotesPipe";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NewsRefreshComponent } from './news-refresh/news-refresh.component';
     NewsListComponent,
     NewsItemComponent,
     NewsEditorComponent,
-    NewsRefreshComponent
+    NewsRefreshComponent,
+    SortByVotesPipe
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
