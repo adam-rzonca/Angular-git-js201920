@@ -1,18 +1,18 @@
-<label>
-  Title:
+<div>
+  <label> Title:</label>
   <input type="text" [(ngModel)]="title" />
-</label>
-<br />
-<label>
-  Image URL:
+</div>
+<div>
+  <label> Image URL:</label>
   <input type="text" [(ngModel)]="imageUrl" />
-</label>
-<br />
-<label>
-  Content:
-</label>
-<br />
-<textarea [(ngModel)]="content"></textarea>
-
-<br />
-<button (click)="addNews()">Add news</button>
+</div>
+<div>
+  <label>
+    Content:
+  </label>
+  <textarea [(ngModel)]="content"></textarea>
+</div>
+<div>
+  <label></label>
+  <button (click)="addNews()">Add news</button>
+</div>

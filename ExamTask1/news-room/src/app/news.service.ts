@@ -41,10 +41,19 @@ export class NewsService {
     this.onChange.emit();
   }
 
-  public vote(id: number) {
+  public voteUp(id: number) {
     const index: number = this.findNewsIndexById(id);
 
     this.news[index].votes++;
+    this.onChange.emit();
+  }
+
+  public voteDown(id: number) {
+    const index: number = this.findNewsIndexById(id);
+
+    if (this.news[index].votes > 0) {
+      this.news[index].votes--;
+    }
     this.onChange.emit();
   }
 

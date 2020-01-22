@@ -1,9 +1,13 @@
-<app-news-editor></app-news-editor>
-<app-news-refresh></app-news-refresh>
-<hr />
-<app-news-item
-  [news]="item"
-  [index]="i"
-  *ngFor="let item of news | sortByVotes; let i = index"
->
-</app-news-item>
+<div class="container">
+  <app-news-editor></app-news-editor>
+  <hr />
+  <app-news-refresh></app-news-refresh>
+
+  <app-news-item
+    class="newsList"
+    [news]="item"
+    [index]="i"
+    *ngFor="let item of news | sortByVotes; let i = index"
+  >
+  </app-news-item>
+</div>

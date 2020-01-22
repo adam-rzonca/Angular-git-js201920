@@ -1,10 +1,15 @@
-<div [ngClass]="{ red: index % 2 === 0, blue: index % 2 !== 0 }" *ngIf="news">
-  <h2>{{ news.title }}</h2>
-  <h3>Votes: {{ news.votes }}</h3>
+<div
+  [ngClass]="{ odd: index % 2 === 0, even: index % 2 !== 0 }"
+  *ngIf="news"
+  class="news"
+>
+  <h2 class="header-big">{{ news.title }}</h2>
+  <h3 class="header-small">Votes: {{ news.votes }}</h3>
   <img src="{{ news.imageUrl }}" width="60" height="90" />
-  <br />
-  {{ news.content }}
-  <br />
+  <!-- <br /> -->
+  <p>{{ news.content }}</p>
+  <!-- <br /> -->
   <button (click)="remove()">Delete</button>
-  <button (click)="vote()">+</button>
+  <button (click)="voteUp()">+</button>
+  <button (click)="voteDown()">-</button>
 </div>

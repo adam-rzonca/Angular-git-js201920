@@ -20,7 +20,11 @@ export class NewsItemComponent {
     this.newsService.removeNews(this.news.id);
   }
 
-  vote() {
-    this.newsService.vote(this.news.id);
+  voteUp() {
+    this.newsService.voteUp(this.news.id);
+  }
+
+  voteDown() {
+    this.newsService.voteDown(this.news.id);
   }
 }
